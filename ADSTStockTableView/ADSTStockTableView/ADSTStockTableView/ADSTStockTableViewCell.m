@@ -33,21 +33,19 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
-   
-//    self.fixedView.frame = CGRectMake((self.frame.size.width-100)/2, 0, CGRectGetWidth(self.fixedView.frame), CGRectGetHeight(self.fixedView.frame));
+
      CGFloat fixedX = self.fixedView.frame.origin.x;
     
     id tempDelegate = _rightContentScrollView.delegate;
     id templeftDelegate = _rightContentScrollView.delegate;
     _rightContentScrollView.delegate = nil;//Do not send delegate message
     
-    _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(self.fixedView.frame)+fixedX, 0, CGRectGetWidth(self.frame) - CGRectGetWidth(self.fixedView.frame)-fixedX, CGRectGetHeight(self.rightContentView.frame));
-    _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.rightContentView.frame), CGRectGetHeight(self.rightContentView.frame));
+    _rightContentScrollView.frame = CGRectMake(CGRectGetWidth(self.fixedView.frame)+fixedX, 0, CGRectGetWidth(self.frame) - CGRectGetWidth(self.fixedView.frame)-fixedX, CGRectGetHeight(self.frame));
+    _rightContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.rightContentView.frame), CGRectGetHeight(self.frame));
     
     
-    _leftContentScrollView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame) - CGRectGetWidth(self.fixedView.frame)-fixedX, CGRectGetHeight(self.leftContentView.frame));
-    _leftContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.leftContentView.frame), CGRectGetHeight(self.leftContentView.frame));
+    _leftContentScrollView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame) - CGRectGetWidth(self.fixedView.frame)-fixedX, CGRectGetHeight(self.frame));
+    _leftContentScrollView.contentSize = CGSizeMake(CGRectGetWidth(self.leftContentView.frame), CGRectGetHeight(self.frame));
      _leftContentScrollView.delegate = nil;//Do not send delegate message
     
     [_leftContentScrollView setContentOffset:CGPointMake(CGRectGetWidth(self.leftContentView.frame)-fixedX, 0) animated:NO];
@@ -66,17 +64,6 @@
 - (void)setupView{
     [self.contentView addSubview:self.rightContentScrollView];
     [self.contentView addSubview:self.leftContentScrollView];
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [self.rightContentScrollView addGestureRecognizer:tapGesture];
-}
-
-#pragma mark - Tap
-
-- (void)tapAction:(UITapGestureRecognizer *)gesture{
-//    if (self.rightContentTapBlock) {
-//        self.rightContentTapBlock(self);
-//    }
 }
 
 #pragma mark - Public

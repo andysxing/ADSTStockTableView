@@ -19,14 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// Cell的左右可滑动的ScrollView,设置成ReadOnly，滚动代理由Table来实现
 @property(nonatomic,readonly,strong)UIScrollView* leftContentScrollView;
 
-
-
-/**
- 右边内容部分的点击事件Block
- */
-@property(nonatomic,readwrite,copy)void (^rightContentTapBlock)(ADSTStockTableViewCell* cell);
-
-
 /**
  设置左边的自定义View
  */

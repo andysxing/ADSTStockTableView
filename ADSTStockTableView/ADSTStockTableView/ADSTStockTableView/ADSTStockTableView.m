@@ -107,15 +107,6 @@ static NSString* const CellID = @"cellID";
             [cell setRightContentView:[self.dataSource cellRightContentForStockView:self rowPath:indexPath.row]];
         }
         
-        __weak typeof(self) weakSelf = self;
-        [cell setRightContentTapBlock:^(ADSTStockTableViewCell* cell){
-            __strong typeof(self) strongSelf = weakSelf;
-            NSIndexPath* indexPath = [tableView indexPathForCell:cell];
-            if ([strongSelf.delegate respondsToSelector:@selector(didSelect:rowPath:)]) {
-                [strongSelf.delegate didSelect:strongSelf rowPath:indexPath.row];
-            }
-        }];
-        
     }
     
     if([self.dataSource respondsToSelector:@selector(updateCellStockView: fixedView: leftContentView: rightContentView:rowPath:)]){
