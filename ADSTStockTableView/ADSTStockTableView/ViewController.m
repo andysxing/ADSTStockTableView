@@ -28,7 +28,7 @@
      return 30;
 }
 
-- (UIView*)cellFixedViewForStockView:(ADSTStockTableView*)stockView rowPath:(NSUInteger)row{
+- (UIView*)cellFixedViewForStockView:(ADSTStockTableView*)stockView {
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width-100)/2, 0, 100, 30)];
           label.textColor = [UIColor grayColor];
           label.backgroundColor = [UIColor colorWithRed:223.0f/255.0 green:223.0f/255.0 blue:223.0f/255.0 alpha:1.0];
@@ -38,7 +38,7 @@
 }
 
 
-- (UIView*)cellLeftContentForStockView:(ADSTStockTableView*)stockView rowPath:(NSUInteger)row{
+- (UIView*)cellLeftContentForStockView:(ADSTStockTableView*)stockView {
          UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
         for (int i = 9; i >= 0; i--) {
             UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake((9-i) * 100, 0, 100, 30)];
@@ -49,7 +49,7 @@
 }
 
 
-- (UIView*)cellRightContentForStockView:(ADSTStockTableView*)stockView rowPath:(NSUInteger)row{
+- (UIView*)cellRightContentForStockView:(ADSTStockTableView*)stockView{
         UIView* bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 30)];
         for (int i = 0; i < 10; i++) {
             UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(i * 100, 0, 100, 30)];

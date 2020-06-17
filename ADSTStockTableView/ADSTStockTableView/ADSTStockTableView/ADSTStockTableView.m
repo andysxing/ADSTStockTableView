@@ -95,16 +95,16 @@ static NSString* const CellID = @"cellID";
         cell.rightContentScrollView.delegate = self;
         cell.leftContentScrollView.delegate = self;
         
-        if([self.dataSource respondsToSelector:@selector(cellLeftContentForStockView:rowPath:)]){
-            [cell setLeftContentView:[self.dataSource cellLeftContentForStockView:self rowPath:indexPath.row]];
+        if([self.dataSource respondsToSelector:@selector(cellLeftContentForStockView:)]){
+            [cell setLeftContentView:[self.dataSource cellLeftContentForStockView:self]];
         }
         
-        if([self.dataSource respondsToSelector:@selector(cellFixedViewForStockView:rowPath:)]){
-            [cell setFixedView:[self.dataSource cellFixedViewForStockView:self rowPath:indexPath.row]];
+        if([self.dataSource respondsToSelector:@selector(cellFixedViewForStockView:)]){
+            [cell setFixedView:[self.dataSource cellFixedViewForStockView:self]];
         }
         
-        if([self.dataSource respondsToSelector:@selector(cellRightContentForStockView:rowPath:)]){
-            [cell setRightContentView:[self.dataSource cellRightContentForStockView:self rowPath:indexPath.row]];
+        if([self.dataSource respondsToSelector:@selector(cellRightContentForStockView:)]){
+            [cell setRightContentView:[self.dataSource cellRightContentForStockView:self]];
         }
         
     }

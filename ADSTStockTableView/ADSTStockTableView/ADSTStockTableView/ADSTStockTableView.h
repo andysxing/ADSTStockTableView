@@ -81,29 +81,26 @@ NS_ASSUME_NONNULL_BEGIN
  FixedView列每一行自定义View
 
  @param stockView ADSTStockTableView
- @param row 当前行的索引值
  @return 返回自定义View
  */
-- (UIView*)cellFixedViewForStockView:(ADSTStockTableView*)stockView rowPath:(NSUInteger)row;
+- (UIView*)cellFixedViewForStockView:(ADSTStockTableView*)stockView;
 
 /**
  左边内容可滑动自定义View
 
  @param stockView ADSTStockTableView
- @param row 当前行的索引值
  @return 返回自定义View
  */
-- (UIView*)cellLeftContentForStockView:(ADSTStockTableView*)stockView rowPath:(NSUInteger)row;
+- (UIView*)cellLeftContentForStockView:(ADSTStockTableView*)stockView;
 
 
 /**
  右边内容可滑动自定义View
 
  @param stockView ADSTStockTableView
- @param row 当前行的索引值
  @return 返回自定义View
  */
-- (UIView*)cellRightContentForStockView:(ADSTStockTableView*)stockView rowPath:(NSUInteger)row;
+- (UIView*)cellRightContentForStockView:(ADSTStockTableView*)stockView;
 
 
 
